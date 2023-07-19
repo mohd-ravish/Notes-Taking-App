@@ -1,39 +1,45 @@
 import { useState } from 'react';
 
-const AddNote = ({ handleAddNote }) => {
-	const [noteText, setNoteText] = useState('');
+const AddNote = ({ addNote }) => {
+	const [noteContent, setNoteContent] = useState('');
+	const [noteTitle, setNoteTitle] = useState('');
 	// const characterLimit = 200;
 
-	const handleChange = (event) => {
+	const handleTitleChange = (event) => {
 		// if (characterLimit - event.target.value.length >= 0) {
-			setNoteText(event.target.value);
+		setNoteTitle(event.target.value);
+
+		// }
+	};
+
+	const handleContentChange = (event) => {
+		// if (characterLimit - event.target.value.length >= 0) {
+		setNoteContent(event.target.value);
 		// }
 	};
 
 	const handleSaveClick = () => {
-		if (noteText.trim().length > 0) {
-			handleAddNote(noteText);
-			setNoteText('');
+		if (noteContent.trim().length > 0 && noteTitle.trim().length > 0) {
+			addNote(noteTitle, noteContent);
+			setNoteContent('');
+			setNoteTitle('');
 		}
 	};
 
 	return (
-		<div className='note new'>
+		<div className="inputArea">
+			<input
+				value={noteTitle}
+				type="text"
+				onChange={handleTitleChange}
+				placeholder="Title" />
 			<textarea
-				rows='8'
-				cols='10'
-				placeholder='Take a note...'
-				value={noteText}
-				onChange={handleChange}
-			></textarea>
-			<div className='note-footer'>
-				{/* <small>
-					{characterLimit - noteText.length} Remaining
-				</small> */}
-				<button className='addButton' onClick={handleSaveClick}>
-					+
-				</button>
-			</div>
+				value={noteContent}
+				type="text"
+				onChange={handleContentChange}
+				placeholder="Take a note..."
+				rows="1" />
+			<button onClick={handleSaveClick}>+</button>
 		</div>
 	);
 };

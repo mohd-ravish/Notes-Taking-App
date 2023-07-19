@@ -1,21 +1,35 @@
 import React from 'react';
 import { MdOutlineDarkMode } from "react-icons/md"
+import { MdSearch } from 'react-icons/md';
 
-const Header = ({ handleToggleDarkMode }) => {
+const Header = ({ handleToggleDarkMode, handleSearchNote }) => {
 	return (
-		<div className='header'>
-			<h1>Notes</h1>
-			<button
-				onClick={() =>
-					handleToggleDarkMode(
-						(previousDarkMode) => !previousDarkMode
-					)
-				}
-				className='toggle'
-			>
-				<MdOutlineDarkMode />
-			</button>
+		<div>
+			<div className='header'>
+				<h1>Notes</h1>
+				<div className='search'>
+					<MdSearch className='search-icons' size='1.3em' />
+					<input
+						onChange={(event) =>
+							handleSearchNote(event.target.value)
+						}
+						type='text'
+						placeholder='Search Notes...'
+					/>
+				</div>
+				<button
+					onClick={() =>
+						handleToggleDarkMode(
+							(previousDarkMode) => !previousDarkMode
+						)
+					}
+					className='dark-mode-button'
+				>
+					<MdOutlineDarkMode />
+				</button>
+			</div>
 		</div>
+
 	);
 };
 
