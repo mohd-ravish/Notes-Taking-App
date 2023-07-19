@@ -4,12 +4,19 @@ import NotesList from './components/NotesList';
 import Header from './components/Header';
 
 const App = () => {
+	
+	const getRandomColor = () => {
+		const colors = ['#ff8572', '#72beed', '#8be874', '#fcca5f', '#dca8ff', '#a1e5f4'];
+		return colors[Math.floor(Math.random() * colors.length)];
+	};
+
 	const [notes, setNotes] = useState([
 		{
 			id: nanoid(),
 			title: '',
 			content: '',
 			date: '',
+			color: getRandomColor()
 		}
 	]);
 
@@ -41,6 +48,7 @@ const App = () => {
 			title: title,
 			content: content,
 			date: date.toLocaleDateString(),
+			color: getRandomColor()
 		};
 		const newNotes = [...notes, newNote];
 		setNotes(newNotes);

@@ -40,6 +40,18 @@ body {
 	color: white;
 }
 
+.dark-mode footer .copyright{
+	color: #ffffff;
+}
+
+.dark-mode .note{
+	box-shadow: none;
+}
+
+.dark-mode .inputArea{
+	box-shadow: none;
+}
+
 /* SEARCH NOTES  */
 
 .search {
@@ -83,7 +95,6 @@ body {
 
 .note {
 	font-family: 'Montserrat', sans-serif;
-	/* background-color: #fff896; */
 	box-shadow: 0 2px 5px #ccc;
 	border-radius: 10px;
 	padding: 1rem;
@@ -178,7 +189,7 @@ footer{
 	padding: 20px;
 }
 
-  footer .copyright {
+footer .copyright {
 	color: #666666;
 	text-align: center;
   }
