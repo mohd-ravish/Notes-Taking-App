@@ -7,17 +7,22 @@ const NotesList = ({
 	handleDeleteNote,
 }) => {
 	return (
-		<div className='notes-list'>
-			{notes.map((note) => (
-				<Note
-					id={note.id}
-					text={note.text}
-					date={note.date}
-					handleDeleteNote={handleDeleteNote}
-				/>
-			))}
-			<AddNote handleAddNote={handleAddNote} />
+		<div>
+			<div>
+				<AddNote handleAddNote={handleAddNote} />
+			</div>
+			<div className='notes-list'>
+				{notes.map((note) => (
+					<Note
+						id={note.id}
+						text={note.text}
+						date={note.date}
+						handleDeleteNote={handleDeleteNote}
+					/>
+				))}
+			</div>
 		</div>
+
 	);
 };
 

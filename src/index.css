@@ -18,6 +18,14 @@ code {
 	justify-content: space-between;
 }
 
+.toggle{
+	background-color: #e1e1e1;
+	border: none;
+	border-radius: 15px;
+	padding: 5px 10px 5px 10px;
+	cursor: pointer;
+}
+
 .dark-mode {
 	background-color: black;
 }
@@ -42,11 +50,24 @@ code {
 		auto-fill,
 		minmax(250px, 1fr)
 	);
+	padding-bottom: 30px;
 }
 
 .note.new {
+	display: flex;
+	max-width: 480px;
 	background-color: #67d7cc;
+	position: relative;
+	width: 480px;
+	margin: 30px auto 40px auto;
+	padding: 20px;
 }
+
+@media only screen and (max-width: 540px) {
+	.note.new {
+	  width: 260px;
+	}
+  }
 
 textarea {
 	border: none;
@@ -58,16 +79,24 @@ textarea:focus {
 	outline: none;
 }
 
-.save {
-	background-color: #e1e1e1;
+.addButton {
+	font-size: 30px;
+	position: absolute;
+	right: 18px;
+	bottom: -18px;
+	background: #f5ba13;
+	color: #fff;
 	border: none;
-	border-radius: 15px;
-	padding: 5px 10px 5px 10px;
+	border-radius: 50%;
+	width: 42px;
+	height: 42px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	outline: none;
 }
 
-.save:hover {
-	background-color: #ededed;
-	cursor: pointer;
+.addButton:hover {
+	background: #ffca39;
 }
 
 .note {
@@ -109,3 +138,43 @@ textarea:focus {
 .search input:focus {
 	outline: none;
 }
+
+
+/* ADD NOTE  */
+
+/* .inputArea {
+	position: relative;
+	width: 480px;
+	margin: 30px auto 30px auto;
+	background: #fff;
+	padding: 20px;
+	border-radius: 7px;
+	box-shadow: 0 1px 5px rgb(138, 137, 137);
+  }
+  
+  .inputArea input,
+  .inputArea textarea {
+	width: 100%;
+	border: none;
+	padding: 4px;
+	outline: none;
+	font-size: 1.2em;
+	font-family: inherit;
+	resize: none;
+  }
+  
+  .inputArea button {
+	font-size: 30px;
+	position: absolute;
+	right: 18px;
+	bottom: -18px;
+	background: #f5ba13;
+	color: #fff;
+	border: none;
+	border-radius: 50%;
+	width: 42px;
+	height: 42px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	outline: none;
+  } */
