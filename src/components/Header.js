@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdOutlineDarkMode } from "react-icons/md"
 
 const Header = ({ handleToggleDarkMode }) => {
 	return (
@@ -12,7 +13,7 @@ const Header = ({ handleToggleDarkMode }) => {
 				}
 				className='toggle'
 			>
-				Toggle Mode
+				<MdOutlineDarkMode />
 			</button>
 		</div>
 	);
