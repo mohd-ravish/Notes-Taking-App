@@ -52,6 +52,10 @@ body {
 	box-shadow: none;
 }
 
+.dark-mode .sectionInputArea{
+	box-shadow: none;
+}
+
 /* SEARCH NOTES  */
 
 .search {
@@ -110,7 +114,7 @@ body {
   }
   
   .note p {
-	font-size: 1.1em;
+	font-size: 1em;
 	margin-bottom: 10px;
 	white-space: pre-wrap;
 	word-wrap: break-word;
@@ -131,10 +135,10 @@ body {
 /* ADD NOTE  */ 
  .inputArea {
 	position: relative;
-	width: 480px;
+	width: 520px;
 	margin: 25px auto 35px auto;
 	background-color: #ffffff;
-	padding: 20px;
+	padding: 15px;
 	border-radius: 7px;
 	box-shadow: 0 1px 5px rgb(121, 121, 121);
   }
@@ -147,7 +151,7 @@ body {
 	border: none;
 	padding: 4px;
 	outline: none;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	resize: none;
   }
   
@@ -171,9 +175,37 @@ body {
 	background: #ffca39;
 } 
 
+.sectionInputArea{
+	position: relative;
+	width: 530px;
+	margin: 25px auto 35px auto;
+	background-color: #ffffff;
+	padding: 10px;
+	border-radius: 7px;
+	box-shadow: 0 1px 5px rgb(121, 121, 121);
+}
+
+.sectionInputArea input{
+	font-family: 'Montserrat', sans-serif;
+	background-color: #ffffff;
+	width: 100%;
+	border: none;
+	padding: 4px;
+	outline: none;
+	font-size: 1.1em;
+	resize: none;
+  }
+
 @media only screen and (max-width: 540px) {
 	.inputArea{
-		width: 260px;
+		width: 280px;
+	}
+}
+
+@media only screen and (max-width: 540px) {
+	.sectionInputArea{
+		width: 280px;
+		padding: 8px;
 	}
 }
 

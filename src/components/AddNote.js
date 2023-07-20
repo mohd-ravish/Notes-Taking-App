@@ -3,6 +3,7 @@ import { useState } from 'react';
 const AddNote = ({ addNote }) => {
 	const [noteContent, setNoteContent] = useState('');
 	const [noteTitle, setNoteTitle] = useState('');
+	const [addNoteSection, setAddNoteSection] = useState(false)
 	// const characterLimit = 200;
 
 	const handleTitleChange = (event) => {
@@ -19,7 +20,7 @@ const AddNote = ({ addNote }) => {
 	};
 
 	const handleSaveClick = () => {
-		if (noteContent.trim().length > 0 && noteTitle.trim().length > 0) {
+		if (noteTitle.trim().length > 0) {
 			addNote(noteTitle, noteContent);
 			setNoteContent('');
 			setNoteTitle('');
@@ -27,6 +28,16 @@ const AddNote = ({ addNote }) => {
 	};
 
 	return (
+		<div>
+		{!addNoteSection ? (
+		<div className="sectionInputArea">
+			<input
+				onClick={()=>{setAddNoteSection(true)}}
+				type="text"
+				placeholder="Type Here..." />
+			{/* <button onClick={handleSaveClick}>+</button> */}
+		</div>
+		) : (
 		<div className="inputArea">
 			<input
 				value={noteTitle}
@@ -38,9 +49,12 @@ const AddNote = ({ addNote }) => {
 				type="text"
 				onChange={handleContentChange}
 				placeholder="Take a note..."
-				rows="1" />
+				rows="3" />
 			<button onClick={handleSaveClick}>+</button>
 		</div>
+		)}
+		</div>
+		
 	);
 };
 
