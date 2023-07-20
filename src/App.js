@@ -69,6 +69,7 @@ const App = () => {
 					notes={notes.filter((note) =>
 						note.title.toLowerCase().includes(searchText) || note.title.includes(searchText) || note.date.includes(searchText) 
 					)}
+					setNotes={setNotes}
 					addNote={addNote}
 					deleteNote={deleteNote}
 				/>

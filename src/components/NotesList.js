@@ -1,37 +1,59 @@
 import AddNote from './AddNote';
-import { RiDeleteBin6Line } from "react-icons/ri";
+import NewNote from './NewNote';
+import Footer from './Footer';
+import { DndContext, closestCenter } from "@dnd-kit/core";
+import {
+	SortableContext,
+	verticalListSortingStrategy,
+	arrayMove,
+} from "@dnd-kit/sortable";
 
-const NotesList = ({ notes, addNote, deleteNote,
-}) => {
+const NotesList = ({ notes, addNote, deleteNote, setNotes }) => {
 
-	var date = new Date();
-	
+
+	const handleDragEnd = (event) => {
+		const { active, over } = event;
+		console.log("active", active.id);
+		console.log("over", over.id);
+
+		if (!active.id !== over.id) {
+			setNotes((notes) => {
+				const oldIndex = notes.findIndex((note) => note.id === active.id);
+				const newIndex = notes.findIndex((note) => note.id === over.id);
+
+				console.log(arrayMove(notes, oldIndex, newIndex));
+				return arrayMove(notes, oldIndex, newIndex);
+			});
+		}
+
+		console.log("drag end");
+	};
+
 	return (
 		<div>
 			<div>
 				<AddNote addNote={addNote} />
 			</div>
-			<div className='notes-list'>
-				{notes.map((note, index) => (
-					<div key={index} className='note' style={{ backgroundColor: note.color }}>
-						<h2>{note.title}</h2>
-						<p>{note.content}</p>
-						<div className='note-footer'>
-							<small>{note.date}</small>
-							<RiDeleteBin6Line
-								onClick={() => deleteNote(note.id)}
-								className='delete-icon'
-								size='1.2em'
+			<DndContext
+				collisionDetection={closestCenter}
+				onDragEnd={handleDragEnd}
+			>
+				<div className='notes-list'>
+					<SortableContext
+						items={notes}
+						strategy={verticalListSortingStrategy}
+					>
+						{notes.map((note) => (
+							<NewNote
+								note={note}
+								deleteNote={deleteNote}
 							/>
-						</div>
-					</div>
-				))}
-			</div>
-			<footer>
-				<p class="copyright">
-					Copyright ⓒ {date.getFullYear()}
-				</p>
-			</footer>
+						))}
+					</SortableContext>
+				</div>
+			</DndContext>
+			<Footer />
+
 		</div>
 
 	);

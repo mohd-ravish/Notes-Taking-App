@@ -4,7 +4,7 @@ body {
 		'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
 		'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale; 
+	-moz-osx-font-smoothing: grayscale;
 	background: #eee;
 	background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 	max-height: 100vh;
@@ -40,19 +40,19 @@ body {
 	color: white;
 }
 
-.dark-mode footer .copyright{
+.dark-mode footer .copyright {
 	color: #ffffff;
 }
 
-.dark-mode .note{
+.dark-mode .note {
 	box-shadow: none;
 }
 
-.dark-mode .inputArea{
+.dark-mode .inputArea {
 	box-shadow: none;
 }
 
-.dark-mode .sectionInputArea{
+.dark-mode .sectionInputArea {
 	box-shadow: none;
 }
 
@@ -111,15 +111,19 @@ body {
 .note h2 {
 	font-size: 1.1em;
 	margin-bottom: 6px;
-  }
-  
-  .note p {
+}
+
+.note p {
 	font-size: 1em;
 	margin-bottom: 10px;
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	flex-grow: 1;
-  }
+}
+
+.note:hover{
+	cursor: grab;
+}
 
 .note-footer {
 	display: flex;
@@ -132,8 +136,8 @@ body {
 	cursor: pointer;
 }
 
-/* ADD NOTE  */ 
- .inputArea {
+/* ADD NOTE  */
+.inputArea {
 	position: relative;
 	width: 520px;
 	margin: 25px auto 35px auto;
@@ -141,10 +145,10 @@ body {
 	padding: 15px;
 	border-radius: 7px;
 	box-shadow: 0 1px 5px rgb(121, 121, 121);
-  }
-  
-  .inputArea input,
-  .inputArea textarea {
+}
+
+.inputArea input,
+.inputArea textarea {
 	font-family: 'Montserrat', sans-serif;
 	background-color: #ffffff;
 	width: 100%;
@@ -153,9 +157,9 @@ body {
 	outline: none;
 	font-size: 1.1em;
 	resize: none;
-  }
-  
-  .inputArea button {
+}
+
+.inputArea button {
 	font-size: 30px;
 	position: absolute;
 	right: 18px;
@@ -169,13 +173,13 @@ body {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 	cursor: pointer;
 	outline: none;
-  }
+}
 
-  .inputArea button:hover {
+.inputArea button:hover {
 	background: #ffca39;
-} 
+}
 
-.sectionInputArea{
+.sectionInputArea {
 	position: relative;
 	width: 530px;
 	margin: 25px auto 35px auto;
@@ -185,7 +189,7 @@ body {
 	box-shadow: 0 1px 5px rgb(121, 121, 121);
 }
 
-.sectionInputArea input{
+.sectionInputArea input {
 	font-family: 'Montserrat', sans-serif;
 	background-color: #ffffff;
 	width: 100%;
@@ -194,35 +198,34 @@ body {
 	outline: none;
 	font-size: 1.1em;
 	resize: none;
-  }
+}
 
 @media only screen and (max-width: 540px) {
-	.inputArea{
+	.inputArea {
 		width: 280px;
 	}
 }
 
 @media only screen and (max-width: 540px) {
-	.sectionInputArea{
+	.sectionInputArea {
 		width: 280px;
 		padding: 8px;
 	}
 }
 
 @media only screen and (max-width: 540px) {
-	.search{
+	.search {
 		width: 55%;
 	}
 }
 
 /* FOOTER  */
 
-footer{
+footer {
 	padding: 20px;
 }
 
 footer .copyright {
 	color: #666666;
 	text-align: center;
-  }
-  
+}
