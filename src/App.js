@@ -13,8 +13,8 @@ const App = () => {
 	const [notes, setNotes] = useState([
 		{
 			id: nanoid(),
-			title: '',
-			content: '',
+			title: 'Hi there',
+			content: 'Welcome to my note-taking website! This is your default note, and you can start taking your own notes right away.',
 			date: '',
 			color: getRandomColor()
 		}

@@ -12,7 +12,6 @@ body {
 }
 
 /* HEADER  */
-
 .header {
 	display: flex;
 	align-items: center;
@@ -57,7 +56,6 @@ body {
 }
 
 /* SEARCH NOTES  */
-
 .search {
 	display: flex;
 	align-items: center;
@@ -216,7 +214,6 @@ body {
 }
 
 /* FOOTER  */
-
 footer {
 	padding: 20px;
 }
@@ -227,29 +224,29 @@ footer .copyright {
 }
 
 /* LOGIN/SIGNUP  */
-.login-header{
+.login-header {
 	font-family: 'Dancing Script';
 	padding-left: 20px;
 	font-size: 18px;
 }
+
 .login-box {
-	width: 320px;
-	height: auto;
-	background-color: rgba(120, 120, 120, 0.3);
+	width: 300px;
+	/* height: auto; */
+	background-color: rgba(104, 104, 104, 0.3);
 	color: #fff;
-	top: 50%;
+	top: 52%;
 	left: 50%;
 	position: absolute;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
-	padding: 30px 30px;
+	padding: 18px;
 	font-family: Verdana;
 	border-radius: 5px;
 }
 
 .login-box h2 {
 	text-align: center;
-	padding-bottom: 18px;
 }
 
 .login-box label {
@@ -260,7 +257,7 @@ footer .copyright {
 
 .login-box input {
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 14px;
 }
 
 .input {
@@ -274,7 +271,7 @@ footer .copyright {
 }
 
 .login-box p {
-	padding: 10px 0px 10px 0px
+	padding: 5px 0px 5px 0px
 }
 
 .login-button {
@@ -290,10 +287,9 @@ footer .copyright {
 
 .login-create {
 	text-align: center;
-	width: 100%;
 	border: none;
 	outline: none;
-	height: 40px;
+	height: 30px;
 	background: #ffffff;
 	font-size: 18px;
 	border-radius: 10px;
