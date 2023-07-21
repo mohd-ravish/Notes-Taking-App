@@ -17,7 +17,7 @@ const App = () => {
 			content: 'Welcome to my note-taking website! This is your default note, and you can start taking your own notes right away.',
 			date: '',
 			color: getRandomColor()
-		}
+		},
 	]);
 
 	const [searchText, setSearchText] = useState('');
