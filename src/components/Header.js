@@ -1,8 +1,17 @@
 import React from 'react';
 import { MdOutlineDarkMode } from "react-icons/md"
+import { AiOutlineLogout } from "react-icons/ai"
 import { MdSearch } from 'react-icons/md';
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ handleToggleDarkMode, handleSearchNote }) => {
+
+	const navigate = useNavigate();
+
+	function logout() {
+		navigate("/login");
+	}
+
 	return (
 		<div>
 			<div className='header'>
@@ -27,6 +36,13 @@ const Header = ({ handleToggleDarkMode, handleSearchNote }) => {
 				>
 					<MdOutlineDarkMode />
 				</button>
+				<button
+					onClick={logout}
+					className='dark-mode-button'
+				>
+					<AiOutlineLogout />
+				</button>
+
 			</div>
 		</div>
 
