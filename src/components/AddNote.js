@@ -4,7 +4,7 @@ const AddNote = ({ addNote }) => {
 	const [noteContent, setNoteContent] = useState('');
 	const [noteTitle, setNoteTitle] = useState('');
 	const [addNoteSection, setAddNoteSection] = useState(false)
-	const characterLimit = 300;
+	const characterLimit = 200;
 
 	const handleTitleChange = (event) => {
 		if (characterLimit - event.target.value.length >= 0) {
